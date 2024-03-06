@@ -1,0 +1,484 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <link
+      rel="icon"
+      href="{% static 'images/favicon.png' %}"
+      type="image/gif"
+    />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>ljbh</title>
+
+    <!-- bootstrap core css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/bootstrap.css' %}"
+    />
+    <!-- font awesome style -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+
+    <style>
+      /* Add your CSS styles here */
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .cart-icon {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        font-size: 20px;
+        color: #333;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+
+      .cart-icon img {
+        width: 30px;
+        height: auto;
+        margin-right: 5px;
+      }
+
+      .cart-page {
+        display: none;
+      }
+
+      .cart-section {
+        margin-top: 50px;
+      }
+
+      .cart-section h2 {
+        color: #333;
+      }
+
+      .cart-items {
+        list-style: none;
+        padding: 0;
+      }
+
+      .cart-item {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .cart-item span {
+        margin-right: 10px;
+      }
+
+      .cart-total {
+        font-weight: bold;
+      }
+
+      .cart-container {
+        position: fixed;
+        top: 0;
+        right: -300px; /* Initially hidden to the right */
+        height: 100%;
+        width: 300px;
+        background-color: #fff;
+        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+      }
+
+      .cart-container.open {
+        right: 0; /* Slide in to the left */
+      }
+    </style>
+  </head>
+
+  <body class="sub_page">
+    <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <!-- Icons on the far left -->
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <img
+                      src="{% static 'images/fb1-100.jpg' %}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <img
+                      src="{% static 'images/gram-100.jpg' %}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <img
+                      src="{% static 'images/app-100.jpg' %}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </li>
+                <!-- Normal menu items -->
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'about' %}"
+                    >About <span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html"> About</a>
+                </li>
+              </ul>
+              <!-- Logo -->
+              <a class="navbar-brand mx-auto" href="{% url 'home' %}">
+                <span> LJBH </span>
+              </a>
+              <!-- Right-aligned items -->
+              <ul class="navbar-nav ml-auto">
+                <!-- Normal menu items -->
+
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="shop.html">Shop</a>
+                </li>
+                <!-- Icons on the far right -->
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <img src="{% static 'images/din.jpg.' %}" alt="Instagram" />
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <img
+                      src="{% static 'images/twit-100.jpg' %}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <img
+                      src="{% static 'images/Asset 5-100.jpg' %}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <br />
+      <br />
+      <br />
+      <br />
+      <!-- end header section -->
+
+      <!-- shop section -->
+
+      <section class="shop_section layout_padding">
+        <div class="container">
+          <div class="heading_container heading_center">
+            <h2>Our Shop</h2>
+          </div>
+          <div class="row">
+            <!-- Product 1 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="box">
+                <a href="#" class="add-to-cart" data-product-id="1">
+                  <div class="img-box">
+                    <img src="{% static 'images/p1.png' %}" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <h6>Necklace</h6>
+                    <h6>
+                      Price
+                      <span class="price"> $200 </span>
+                    </h6>
+                  </div>
+                  <div class="new">
+                    <span> New </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="box">
+                <a href="#" class="add-to-cart" data-product-id="2">
+                  <div class="img-box">
+                    <img src="{% static 'images/p2.png' %}" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <h6>Necklace</h6>
+                    <h6>
+                      Price
+                      <span class="price"> $300 </span>
+                    </h6>
+                  </div>
+                  <div class="new">
+                    <span> New </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="box">
+                <a href="">
+                  <div class="img-box">
+                    <img src="{% static 'images/p3.png' %}" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <h6>Necklace</h6>
+                    <h6>
+                      Price
+                      <span> $110 </span>
+                    </h6>
+                  </div>
+                  <div class="new">
+                    <span> New </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="box">
+                <a href="">
+                  <div class="img-box">
+                    <img src="{% static 'images/p4.png' %}" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <h6>Ring</h6>
+                    <h6>
+                      Price
+                      <span> $45 </span>
+                    </h6>
+                  </div>
+                  <div class="new">
+                    <span> New </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="box">
+                <a href="">
+                  <div class="img-box">
+                    <img src="{% static 'images/p5.png' %}" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <h6>Ring</h6>
+                    <h6>
+                      Price
+                      <span> $95 </span>
+                    </h6>
+                  </div>
+                  <div class="new">
+                    <span> New </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="box">
+                <a href="">
+                  <div class="img-box">
+                    <img src="{% static 'images/p6.png' %}" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <h6>Earrings</h6>
+                    <h6>
+                      Price
+                      <span> $70 </span>
+                    </h6>
+                  </div>
+                  <div class="new">
+                    <span> New </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="box">
+                <a href="">
+                  <div class="img-box">
+                    <img src="{% static 'images/p7.png' %}" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <h6>Earrings</h6>
+                    <h6>
+                      Price
+                      <span> $400 </span>
+                    </h6>
+                  </div>
+                  <div class="new">
+                    <span> New </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="box">
+                <a href="">
+                  <div class="img-box">
+                    <img src="{% static 'images/p8.png' %}" alt="" />
+                  </div>
+                  <div class="detail-box">
+                    <h6>Necklace</h6>
+                    <h6>
+                      Price
+                      <span> $450 </span>
+                    </h6>
+                  </div>
+                  <div class="new">
+                    <span> New </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cart Icon -->
+      <div class="cart-icon" id="cart-icon">
+        <img src="{% static 'images/cart-icon.png' %}" alt="Cart Icon" />
+        <span id="cart-count">0</span>
+      </div>
+
+      <!-- Hidden Cart Container -->
+      <div id="cart-container" class="cart-container">
+        <div class="container cart-section">
+          <h2>Shopping Cart</h2>
+          <ul id="cart-items" class="cart-items">
+            <!-- Cart items will be added dynamically using JavaScript -->
+          </ul>
+          <p class="cart-total">Total: <span id="cart-total">$0.00</span></p>
+          <button id="checkout-button" class="btn btn-primary">Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- end shop section -->
+
+    <!-- jQery -->
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <!-- custom js -->
+    <script src="{% static 'js/custom.js' %}"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const addToCartButtons = document.querySelectorAll(".add-to-cart");
+        const cartItemsElement = document.getElementById("cart-items");
+        const cartTotalElement = document.getElementById("cart-total");
+        const cartContainer = document.getElementById("cart-container");
+        const cartIcon = document.getElementById("cart-icon");
+        const cartCountElement = document.getElementById("cart-count");
+
+        let cart = [];
+
+        addToCartButtons.forEach((button) => {
+          button.addEventListener("click", addToCart);
+        });
+
+        function addToCart(event) {
+          event.preventDefault();
+          const productId = event.currentTarget.getAttribute("data-product-id");
+          const productName =
+            event.currentTarget.querySelector(".detail-box h6").innerText;
+          const productPrice =
+            event.currentTarget.querySelector(".price").innerText;
+
+          const item = {
+            id: productId,
+            name: productName,
+            price: parseFloat(productPrice.replace("$", "")),
+          };
+
+          cart.push(item);
+          updateCart();
+        }
+
+        function updateCart() {
+          cartItemsElement.innerHTML = "";
+          let total = 0;
+
+          cart.forEach((item) => {
+            const listItem = document.createElement("li");
+            listItem.classList.add("cart-item");
+            listItem.innerHTML = `<span>${
+              item.name
+            }</span><span>$${item.price.toFixed(2)}</span>`;
+            cartItemsElement.appendChild(listItem);
+            total += item.price;
+          });
+
+          cartTotalElement.innerText = `$${total.toFixed(2)}`;
+          cartCountElement.innerText = cart.length;
+
+          // Show/hide cart container based on whether there are items in the cart
+          cartContainer.classList.toggle("open", cart.length > 0);
+        }
+
+        // Toggle cart container visibility when clicking the cart icon
+        cartIcon.addEventListener("click", function () {
+          cartContainer.classList.toggle("open");
+        });
+      });
+
+      document
+        .getElementById("checkout-button")
+        .addEventListener("click", function () {
+          // Redirect to the checkout page
+          window.location.href = "/checkout";
+        });
+    </script>
+  </body>
+</html>

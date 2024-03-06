@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Checkout</title>
+  </head>
+  <body>
+    <h1>Checkout</h1>
+    <!-- Your checkout form here -->
+    <form id="checkout-form" method="post">
+      {% csrf_token %}
+      <label for="shipping-address">Shipping Address:</label>
+      <input
+        type="text"
+        id="shipping-address"
+        name="shipping_address"
+        required
+      /><br /><br />
+
+      <label for="payment-method">Payment Method:</label>
+      <select id="payment-method" name="payment_method" required>
+        <option value="credit_card">Credit Card</option>
+        <option value="paypal">PayPal</option></select
+      ><br /><br />
+
+      <button type="submit">Place Order</button>
+    </form>
+
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script>
+      $(document).ready(function () {
+        $("#checkout-form").submit(function (event) {
+          event.preventDefault(); // Prevent the form from submitting normally
+
+          $.ajax({
+            type: "POST",
+            url: "/checkout/",
+            data: $(this).serialize(),
+            success: function (response) {
+              if (response.success) {
+                alert("Order placed successfully!");
+              } else {
+                alert("Failed to place order. Please try again.");
+              }
+            },
+            error: function () {
+              alert(
+                "An error occurred while processing your request. Please try again."
+              );
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
