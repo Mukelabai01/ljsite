@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,15 +19,19 @@
     <title>lj</title>
 
     <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static '' %}css/bootstrap.css"
+    />
 
     <!-- font awesome style -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="{% static '' %}css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="{% static '' %}css/style.css" rel="stylesheet" />
     <!-- responsive style -->
-    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="{% static '' %}css/responsive.css" rel="stylesheet" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
@@ -48,6 +54,7 @@
       .about_section h5 {
         font-weight: bold;
         color: #cd7656;
+        font-size: 24px;
       }
 
       .choose-us_section {
@@ -168,6 +175,28 @@
       .client_logo {
         margin: 20px;
       }
+
+      .nav-link img {
+        margin-bottom: 0;
+        max-width: 30px;
+      }
+
+      .nav-item {
+        margin-right: 1.5px; /* Adjust this value to reduce the spacing */
+      }
+
+      .nav-link img {
+        margin-bottom: 0;
+        max-width: 30px;
+      }
+
+      .nav-item {
+        margin-right: 1.5px; /* Adjust this value to reduce the spacing */
+      }
+
+      .our-partners_section p {
+        text-align: justify;
+      }
     </style>
   </head>
 
@@ -177,10 +206,6 @@
       <header class="header_section">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="index.html">
-              <span> ljbh </span>
-            </a>
-
             <button
               class="navbar-toggler"
               type="button"
@@ -197,62 +222,81 @@
               <ul class="navbar-nav mr-auto">
                 <!-- Icons on the far left -->
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <img src="images/din.jpg" alt="Instagram" />
+                  <a href="https://web.facebook.com/liselijdesign/" class="nav-link">
+                    <img
+                      src="{% static 'images/fb1-100.jpg' %}"
+                      alt="Instagram"
+                    />
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <img src="images/din.jpg" alt="Instagram" />
+                  <a href="https://www.instagram.com/liselijdesign/" class="nav-link">
+                    <img
+                      src="{% static 'images/gram-100.jpg' %}"
+                      alt="Instagram"
+                    />
                   </a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <img src="images/din.jpg" alt="Instagram" />
+                  <a href="https://wa.me/260963865071" class="nav-link">
+                    <img
+                      src="{% static 'images/app-100.jpg' %}"
+                      alt="Instagram"
+                    />
                   </a>
                 </li>
                 <!-- Normal menu items -->
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html"
-                    >Home <span class="sr-only">(current)</span></a
+                  <a class="nav-link" href="{% url 'about' %}"
+                    >About <span class="sr-only">(current)</span></a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About</a>
+                  <a class="nav-link" href="{% url 'about' %}"> About</a>
                 </li>
+
+                 <li class="nav-item">
+                  <a class="nav-link" href="{% url 'work' %}"> Work</a>
+                </li>
+                
               </ul>
               <!-- Logo -->
-              <a class="navbar-brand mx-auto" href="index.html">
-                <span> LJBH </span>
-              </a>
+              <a class="navbar-brand mx-auto" href="{% url 'home' %}">
+    <img src="{% static 'images/LOGO6.png' %}" alt="Logo" />
+</a>
               <!-- Right-aligned items -->
               <ul class="navbar-nav ml-auto">
                 <!-- Normal menu items -->
+
                 <li class="nav-item">
-                  <a class="nav-link" href="works.html">Work</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
+                  <a class="nav-link" href="{% url 'shop' %}">Shop</a>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="shop.html">Shop</a>
+                  <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                 </li>
                 <!-- Icons on the far right -->
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <img src="images/din.jpg" alt="Instagram" />
+                  <a href="www.linkedin.com/company/liseli-j-branding-house" class="nav-link">
+                    <img src="{% static 'images/din.jpg.' %}" alt="Instagram" />
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <img src="images/din.jpg" alt="Instagram" />
+                  <a href="https://twitter.com/liselijdesign" class="nav-link">
+                    <img
+                      src="{% static 'images/twit-100.jpg' %}"
+                      alt="Instagram"
+                    />
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <img src="images/Asset 5-100.jpg" alt="Instagram" />
+                  <a href="
+https://www.tiktok.com/@liselijstudio" class="nav-link">
+                    <img
+                      src="{% static 'images/tok.jpg' %}"
+                      alt="Instagram"
+                    />
                   </a>
                 </li>
               </ul>
@@ -300,7 +344,7 @@
           </div>
           <div class="col-md-6">
             <div class="img-box">
-              <img src="images/logo.a33c06c0.png" alt="" />
+              <img src="{% static 'images/logo.a33c06c0.png' %}" alt="" />
             </div>
           </div>
         </div>
@@ -316,12 +360,12 @@
                 <h2>ABOUT THE FOUNDER</h2>
                 <h2>Jacklyn Kawana</h2>
                 <br />
-                <h6>MANAGING DIRECTOR</h6>
+                <h6>MANAGING DIRECTOR | CREATIVE DIRECTOR</h6>
               </div>
               <p style="text-align: justify">
                 “Liseli J Branding House was created from a place of need for
                 quality, creative and well-thought out design within the
-                country. Owner of The LJ Studio Ms. Jacklyn Kawana feels that
+                country". Owner of The LJ Studio Ms. Jacklyn Kawana feels that
                 her Zambian people deserve quality design and good standard on
                 all fronts that can allow the homemade produce to be placed at
                 the international level. "We deserve good quality! As Zambians
@@ -336,52 +380,84 @@
           </div>
           <div class="col-md-6">
             <div class="img-box">
-              <img src="images/jq.webp" alt="" />
+              <img src="{% static 'images/MD.jpg' %}" alt="" />
             </div>
           </div>
         </div>
       </div>
     </section>
+    <br />
+
+    <section class="our-partners_section layout_padding">
+      <div class="container">
+        <div class="section_heading text-center">
+          <h2>OUR PARTNERS</h2>
+          <br /><br />
+          <p>
+            Our ever-growing group of partners plays an role in our mission to
+          </p>
+          <p>achieve an end-to-end branding experience for each client</p>
+          <p>and is also extremely supportive through this journey.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="our-partners_section layout_padding">
+      <div class="container">
+        <div class="section_heading text-center">
+          <h2>OUR BOARD</h2>
+          <br /><br />
+          <p>Our board of directors offer high level guidance.</p>
+          <p>
+            They provide credible advice and assist in creating SMART GOALS to
+            achieve our vision
+          </p>
+          <p>and mission.</p>
+        </div>
+      </div>
+    </section>
+    <br /><br />
 
     <section class="our-clients_section layout_padding">
       <div class="container">
         <div class="section_heading text-center">
           <h2>OUR CLIENTS</h2>
+          <br />
         </div>
         <br />
         <div class="client_logos">
           <div class="client_logo">
-            <img src="images/48.png" alt="Client 1 Logo" />
+            <img src="{% static 'images/48.png' %}" alt="Client 1 Logo" />
           </div>
           <div class="client_logo">
-            <img src="images/ex.png" alt="Client 2 Logo" />
+            <img src="{% static 'images/ex.png' %}" alt="Client 2 Logo" />
           </div>
           <div class="client_logo">
-            <img src="images/bench.png" alt="Client 3 Logo" />
+            <img src="{% static 'images/bench.png' %}" alt="Client 3 Logo" />
           </div>
           <div class="client_logo">
-            <img src="images/lkif.png" alt="Client 3 Logo" />
+            <img src="{% static 'images/lkif.png' %}" alt="Client 3 Logo" />
           </div>
           <div class="client_logo">
-            <img src="images/gra.png" alt="Client 3 Logo" />
+            <img src="{% static 'images/gra.png' %}" alt="Client 3 Logo" />
           </div>
           <div class="client_logo">
-            <img src="images/lamasat.png" alt="Client 3 Logo" />
+            <img src="{% static 'images/lamasat.png' %}" alt="Client 3 Logo" />
           </div>
           <div class="client_logo">
-            <img src="images/ze.png" alt="Client 3 Logo" />
+            <img src="{% static 'images/ze.png' %}" alt="Client 3 Logo" />
           </div>
           <div class="client_logo">
-            <img src="images/sis.png" alt="Client 3 Logo" />
+            <img src="{% static 'images/sis.png' %}" alt="Client 3 Logo" />
           </div>
           <div class="client_logo">
-            <img src="images/turnup.png" alt="Client 3 Logo" />
+            <img src="{% static 'images/turnup.png' %}" alt="Client 3 Logo" />
           </div>
           <div class="client_logo">
-            <img src="images/bench.png" alt="Client 3 Logo" />
+            <img src="{% static 'images/bench.png' %}" alt="Client 3 Logo" />
           </div>
           <div class="client_logo">
-            <img src="images/thase.png" alt="Client 3 Logo" />
+            <img src="{% static 'images/thase.png' %}" alt="Client 3 Logo" />
           </div>
           <!-- Add more client logos as needed -->
         </div>
@@ -396,32 +472,22 @@
           <div class="row">
             <div class="col-md-6 col-lg-3">
               <div class="info_detail">
-                <h4>Digian</h4>
-                <p>
-                  Necessary, making this the first true generator on the
-                  Internet. It uses a dictionary of over 200 Latin words,
-                  combined with a handful
-                </p>
+                <h4>LJBH</h4>
+                <p>CREATING TIMELESS BRANDS.</p>
               </div>
             </div>
             <div class="col-md-6 col-lg-2 mx-auto">
               <div class="info_link_box">
                 <h4>Links</h4>
                 <div class="info_links">
-                  <a class="" href="index.html"> Home </a>
-                  <a class="" href="about.html"> About </a>
-                  <a class="" href="service.html"> Services </a>
-                  <a class="" href="contact.html"> Contact Us </a>
+                  <a class="" href="{% url 'home' %}"> Home </a>
+                  <a class="" href="{% url 'about' %}"> About </a>
+                  <a class="" href="{% url 'work' %}"> Work </a>
+                  <a class="" href="{% url 'shop' %}"> Shop </a>
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-              <h4>Subscribe</h4>
-              <form action="#">
-                <input type="text" placeholder="Enter email" />
-                <button type="submit">Subscribe</button>
-              </form>
-            </div>
+
             <div class="col-md-6 col-lg-3 mb-0 ml-auto">
               <div class="info_contact">
                 <h4>Address</h4>
@@ -432,11 +498,11 @@
                   </a>
                   <a href="">
                     <i class="fa fa-phone" aria-hidden="true"></i>
-                    <span> Call +01 1234567890 </span>
+                    <span> Call +260 963865071 </span>
                   </a>
                   <a href="">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <span> demo@gmail.com </span>
+                    <span> liselijbrandinghouse@gmail.com </span>
                   </a>
                 </div>
               </div>
@@ -453,6 +519,9 @@
                 <a href="">
                   <i class="fa fa-instagram" aria-hidden="true"></i>
                 </a>
+                <a href="">
+                  <i class="fa fa-tikTok" aria-hidden="true"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -464,12 +533,12 @@
       <!-- footer section -->
       <footer class="footer_section">
         <div class="container"></div>
+        <br />
+        <br />
+        <br />
       </footer>
       <!-- footer section -->
     </div>
-    <br />
-    <br />
-    <br />
 
     <!-- jQery -->
     <script src="js/jquery-3.4.1.min.js"></script>
