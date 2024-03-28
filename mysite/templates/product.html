@@ -1,0 +1,470 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+    />
+    <!-- Add your CSS stylesheets here -->
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #efe4d9;
+      }
+
+      .popup h5 {
+        color: red; /* Set the font color to red */
+      }
+      .popup h2 {
+        color: #cd7656;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap; /* Allow flex items to wrap to next line */
+        justify-content: space-between;
+      }
+
+      .product-detail {
+        display: flex;
+        align-items: center;
+        flex: 0 0 100%; /* Full width on small screens */
+        margin-bottom: 20px; /* Add some space between sections */
+      }
+
+      .product-image {
+        flex: 0 0 40%;
+        padding-right: 20px;
+      }
+
+      .product-image img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .product-info {
+        flex: 0 0 60%;
+      }
+
+      .product-info h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .product-info p {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.5;
+      }
+
+      .product-info label {
+        font-weight: bold;
+      }
+
+      .product-info select,
+      .product-info input[type="number"],
+      .product-info button {
+        margin-top: 10px;
+        padding: 5px 10px;
+        font-size: 16px;
+      }
+
+      .product-info button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      .total-price {
+        font-weight: bold;
+        font-size: 20px;
+        margin-top: 20px;
+      }
+
+      .price-list {
+        flex: 0 0 30%;
+        margin-left: 20px;
+      }
+
+      .price-list h3 {
+        margin-bottom: 10px;
+        text-align: center;
+        color: #cd7656; /* Change the color to your desired color */
+      }
+
+      .product-info h2 {
+        color: #cd7656;
+      }
+
+      .price-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        width: 20%; /* Ensure the price items take up the full width */
+      }
+
+      .price-item span:nth-child(2) {
+        margin-left: 100px; /* Adjust this value as needed */
+      }
+
+      .price-list {
+        flex: 0 0 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* Move the price list to the right */
+      }
+
+      @media (min-width: 768px) {
+        /* Medium screens and above */
+
+        .product-detail {
+          flex: 0 0 48%; /* Two columns on medium screens */
+        }
+
+        .price-list {
+          flex: 0 0 48%; /* Two columns on medium screens */
+        }
+      }
+
+      @media (min-width: 992px) {
+        /* Large screens */
+
+        .product-detail {
+          flex: 0 0 30%; /* Three columns on large screens */
+        }
+
+        .price-list {
+          flex: 0 0 30%; /* Three columns on large screens */
+        }
+      }
+
+      .header {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: center; /* Center the menu items horizontally */
+        align-items: center; /* Center the menu items vertically */
+      }
+
+      .menu a {
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+      }
+
+      .menu a:hover {
+        background-color: #555;
+      }
+
+      /* Popup styles */
+      .popup {
+        display: none;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 400px;
+        height: 100%;
+        background-color: #ffffff;
+        color: black;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        animation: slide-in 0.5s forwards;
+      }
+
+      @keyframes slide-in {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup">
+      <h2>Liseli J Branding House Art Online Terms and Conditions</h2>
+      <br />
+      <h5>
+        Please read our terms and conditions before you buy anything on our
+        website.
+      </h5>
+      <p>
+        This contract states legal rights and responsibilities; and certain key
+        information required by law. In this contract: ‘We’, ‘us’ or ‘our’ means
+        the Liseli J Branding House whose administrative office is at 40 Lamasat
+        Complex, Bonaventure, Lusaka, Zambia and ‘You’ or ‘your’ means the buyer
+        of our goods from “liselijbrandinghouse.com” hereinafter referred to us
+        ‘Liseli J Art Online’.
+      </p>
+      <p>
+        To ensure you are fully informed, Liseli J Branding House will provide
+        specific information on refunds, exchange, cancellation and additional
+        charges. This key information can be found listed on the webpage for
+        each individual item available for purchase through our website. You can
+        also find the key information in the order confirmation/order acceptance
+        email that will be sent to you further to your order being accepted by
+        us. The key information we give forms part of this contract as though it
+        is set out in full here.
+      </p>
+      <p>
+        If you buy goods on our website, you agree to be legally bound by this
+        contract. You place an order on the website by clicking on add to cart,
+        logging into your Liseli J Art Online Store account and then moving to
+        check out and paying for the items in the cart. Please read and check
+        your order carefully before submitting it. If you need to correct any
+        errors you can do so before proceeding to checkout.
+      </p>
+      <p>
+        When you place your order at the end of the online checkout process, we
+        will acknowledge it by email. This acknowledgement is subject to our
+        approval. Possible reasons for rejecting an order are:
+      </p>
+      <ul>
+        <li>Payment failed</li>
+        <li>Buyer prohibited</li>
+        <li>Order cannot be fulfilled</li>
+        <li>Pricing or description error</li>
+      </ul>
+      <h2>TERMS AND CONDITIONS</h2>
+      <ul>
+        <li>
+          Only account registered users are eligible to purchase from our online
+          store.
+        </li>
+        <li>
+          For your order to be accepted/confirmed, we must receive full payment.
+        </li>
+        <li>On receipt of payment, we will email confirmation of order.</li>
+        <li>Our acceptance confirms a mutual legally binding contract.</li>
+      </ul>
+      <h5>
+        Note that: Our website terms and conditions may vary from the above,
+        therefore, please refer to the specific website terms and conditions.
+      </h5>
+      <h2>PRICING INCLUDES:</h2>
+      <ul>
+        <li>Cost of the art print</li>
+        <li>Packaging and Shipping</li>
+        <li>All applicable local taxes</li>
+      </ul>
+      <h2>Cancellations, Refunds and Exchanges</h2>
+      <ul>
+        <li>
+          Cancellation and refunds prior to actual dispatch of the consignment
+          will attract a 10% administrative fee on the illustration cost,
+          minimum $10.
+        </li>
+        <li>
+          Cancellations and refunds after confirmed dispatch will be at the cost
+          and risk of the customer and subject to administrative requirements.
+        </li>
+        <li>Exchanges will be subject to any accrued administrative costs.</li>
+      </ul>
+      <h2>Delivery of goods</h2>
+      <ul>
+        <li>
+          We commit to deliver your consignment on a timely basis within 21
+          days.
+        </li>
+        <li>
+          In case of an extended period of delivery because of extenuating
+          circumstances, then we will endeavour to inform you.
+        </li>
+        <li>
+          In the unlikely event that the consignment remains undelivered after
+          21days we undertake to investigate, claim insurance and/or replace the
+          artworks under a new consignment within an extra period of 30 days.
+        </li>
+        <li>
+          On receipt of your consignment, please sign as required by the courier
+          company to transfer ownership.
+        </li>
+      </ul>
+      <h2>Liability</h2>
+      <p>
+        Failure to deliver goods as a result of circumstances beyond our
+        reasonable control including, strikes, lock-outs and other industrial
+        disputes, breakdown of systems or network access, floods, fire,
+        explosion or accident may not be covered by insurance.
+      </p>
+      <ul>
+        <li>
+          - Nothing in these terms and conditions is intended to limit any
+          rights you may have as a consumer under applicable local laws or other
+          statutory rights that exclude or limit our liability to you for any
+          death or personal injury resulting from our negligence.
+        </li>
+      </ul>
+
+      <h2>Notices</h2>
+      <p>
+        Unless otherwise expressly stated in these terms and conditions, all
+        your notices must be sent to our email address at
+        shop@liselijbrandinghouse.com. Our notices will be displayed on our
+        website or directly emailed to you.
+      </p>
+
+      <h2>Invalidity</h2>
+      <p>
+        Any part of these terms and conditions that is unenforceable will not
+        affect the enforceability of any other part of these conditions.
+      </p>
+
+      <h2>Governing Law and Disputes</h2>
+      <p>
+        This contract shall be governed by and interpreted in accordance with
+        Zambian Law and the courts shall have jurisdiction to resolve any
+        disputes between parties. Any disputes arising from this contract will
+        first be subject to an arbitration process and if unresolved, subject to
+        the Zambian Courts of Law.
+      </p>
+
+      <h2>Entire agreement</h2>
+      <p>
+        Our website content, delivery details, contact details and terms &
+        conditions represent the whole of our agreement relating to the supply
+        of the goods under this contract.
+      </p>
+    </div>
+    <div class="header">
+      <div class="menu">
+        <a href="#">Home</a>
+      </div>
+      <div class="menu">
+        <a href="#">About</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="product-detail">
+        <div class="product-image">
+          <img src="{% static 'images/art1.jpg' %}" alt="Product Image" />
+        </div>
+        <div class="product-info">
+          <h1>{{ product.name }}</h1>
+          <p>Description: {{ product.description }}</p>
+          <p>Price: ${{ product.price }}</p>
+          <form id="product-form" method="POST" action="{% url 'checkout' %}">
+  {% csrf_token %}
+  <input type="hidden" name="product_id" value="{{ product.id }}" />
+  <input type="hidden" name="size" id="selected-size" value="" />
+  <input type="hidden" name="quantity" id="selected-quantity" value="" />
+  <input type="hidden" name="shipping" id="selected-shipping" value="" />
+  <input type="hidden" name="total_price" id="selected-total-price" value="" />
+  <label for="size">Select size:</label>
+  <select name="size" id="size">
+    <option value="A5" data-price="20">A5</option>
+    <option value="A4" data-price="40">A4</option>
+    <option value="A3" data-price="60">A3</option>
+    <option value="A2" data-price="80">A2</option>
+  </select>
+  <br />
+  <label for="quantity">Quantity:</label>
+  <input type="number" name="quantity" id="quantity" value="1" min="1" />
+  <br />
+  <label for="shipping">Shipping:</label>
+  <input type="checkbox" name="shipping" id="shipping" />
+  <label for="shipping">Europe</label>
+  <br />
+  <button type="submit">Proceed to Checkout</button>
+</form>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sizeSelect = document.getElementById("size");
+    const quantityInput = document.getElementById("quantity");
+    const shippingCheckbox = document.getElementById("shipping");
+    const form = document.getElementById("product-form");
+
+    function calculateTotalPrice() {
+      const selectedOption = sizeSelect.options[sizeSelect.selectedIndex];
+      const unitPrice = parseFloat(selectedOption.getAttribute("data-price"));
+      const quantity = parseInt(quantityInput.value);
+      const shippingPrice = shippingCheckbox.checked ? 50 : 20; // Europe: $50, Africa: $20
+      const totalPrice = unitPrice * quantity + shippingPrice;
+      document.getElementById("total-price").innerText = totalPrice.toFixed(2);
+      // Update hidden input value for total price
+      document.getElementById("selected-total-price").value = totalPrice.toFixed(2);
+    }
+
+    // Calculate total price initially
+    calculateTotalPrice();
+
+    // Calculate total price when size, quantity, or shipping changes
+    sizeSelect.addEventListener("change", calculateTotalPrice);
+    quantityInput.addEventListener("input", calculateTotalPrice);
+    shippingCheckbox.addEventListener("change", calculateTotalPrice);
+  });
+</script><form id="product-form" method="POST" action="{% url 'checkout' %}">
+  {% csrf_token %}
+  <input type="hidden" name="product_id" value="{{ product.id }}" />
+  <input type="hidden" name="size" id="selected-size" value="" />
+  <input type="hidden" name="quantity" id="selected-quantity" value="" />
+  <input type="hidden" name="shipping" id="selected-shipping" value="" />
+  <input type="hidden" name="total_price" id="selected-total-price" value="" />
+  <label for="size">Select size:</label>
+  <select name="size" id="size">
+    <option value="A5" data-price="20">A5</option>
+    <option value="A4" data-price="40">A4</option>
+    <option value="A3" data-price="60">A3</option>
+    <option value="A2" data-price="80">A2</option>
+  </select>
+  <br />
+  <label for="quantity">Quantity:</label>
+  <input type="number" name="quantity" id="quantity" value="1" min="1" />
+  <br />
+  <label for="shipping">Shipping:</label>
+  <input type="checkbox" name="shipping" id="shipping" />
+  <label for="shipping">Europe</label>
+  <br />
+  <button type="submit">Proceed to Checkout</button>
+</form>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sizeSelect = document.getElementById("size");
+    const quantityInput = document.getElementById("quantity");
+    const shippingCheckbox = document.getElementById("shipping");
+    const form = document.getElementById("product-form");
+
+    function calculateTotalPrice() {
+      const selectedOption = sizeSelect.options[sizeSelect.selectedIndex];
+      const unitPrice = parseFloat(selectedOption.getAttribute("data-price"));
+      const quantity = parseInt(quantityInput.value);
+      const shippingPrice = shippingCheckbox.checked ? 50 : 20; // Europe: $50, Africa: $20
+      const totalPrice = unitPrice * quantity + shippingPrice;
+      document.getElementById("total-price").innerText = totalPrice.toFixed(2);
+      // Update hidden input value for total price
+      document.getElementById("selected-total-price").value = totalPrice.toFixed(2);
+    }
+
+    // Calculate total price initially
+    calculateTotalPrice();
+
+    // Calculate total price when size, quantity, or shipping changes
+    sizeSelect.addEventListener("change", calculateTotalPrice);
+    quantityInput.addEventListener("input", calculateTotalPrice);
+    shippingCheckbox.addEventListener("change", calculateTotalPrice);
+  });
+</script>
+  </body>
+</html>

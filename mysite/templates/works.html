@@ -89,55 +89,88 @@
           </div>
         </div>
         </div>
-        <footer id="footer" class="footer footer-red">
-          <div class="footer-content">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4 mt-1 mb-5">
-                  <h3 class="section-item-title">office</h3>
-                  <div class="contact-item">166 Main Street, Beverly Hills, CA, 90210<br /> United States</div>
-                  <div class="contact-item"><a href="mailto:hello@lewisstudio.co">hello@lewisstudio.co</a></div>
-                  <div class="contact-item"><a href="tel:+00853462188" class="phone-link">+0085 346 2188</a></div>
-                  <ul class="social">
-                    <li><a href="#"><i class="socicon-twitter"></i></a></li>
-                    <li><a href="#"><i class="socicon-facebook"></i></a></li>
-                    <li><a href="#"><i class="socicon-googleplus"></i></a></li>
-                    <li><a href="#"><i class="socicon-behance"></i></a></li>
-                    <li><a href="#"><i class="socicon-instagram"></i></a></li>
-                  </ul>
-                </div>
-                <div class="col-md-4 mb-5 text-center">
-                  <div class="more fs14 mb-2 mt-3">So What’s Next?</div>
-                  <div class="h2-3d font-custom mb-2"><strong>We’re Ready!</strong></div>
-                  <div class="more more-xl"><a href="#" class="underline">Let’s Chat</a></div>
-                </div>
-                <div class="col-md-4 mt-1 mb-5 text-right">
-                  <h3 class="section-item-title">Twitter</h3>
-                  <div class="twitter-item">
-                    Looking for aa Creative PSD Template?
-                    <br />
-                    It here: <a href="https://tf.net/OAWS890a" target="_blank">https://tf.net/OAWS890a</a>
-                    <div class="twitter-date"><i class="socicon-twitter"></i> 2 days ago</div>
-                  </div>
-                  <div class="twitter-item">
-                    You need an image stock
-                    <br />
-                    It here: <a href="https://uph.com/567AW1" target="_blank">https://uph.com/567AW1</a>
-                    <div class="twitter-date"><i class="socicon-twitter"></i> 4 days ago</div>
-                  </div>
+        <div class="footer_container">
+      <!-- info section -->
+
+      <section class="info_section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-3">
+               <div class="info_detail">
+    <img  class="logo" src="{% static 'images/logo3.png' %}" alt="Logo"> <br/><br/><br/>
+                <p>
+                 CREATING TIMELESS BRANDS.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-2 mx-auto">
+              <div class="info_link_box">
+                <h4>Links</h4>
+                <div class="info_links">
+                  <a class="" href="{% url 'home' %}"> Home </a>
+                  <a class="" href="{% url 'about' %}"> About </a>
+                  <a class="" href="{% url 'work' %}"> Work </a>
+                  <a class="" href="{% url 'shop' %}"> Shop </a>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="site-info">
-            <div class="container">
-              <div class="copyright">&copy; 2023 <strong>LISELI J BRANDING HOUSE</strong>. All Rights Reserved. design by <strong>LJBH</strong></div>
+           
+            <div class="col-md-6 col-lg-3 mb-0 ml-auto">
+              <div class="info_contact">
+                <h4>Address</h4>
+                <div class="contact_link_box">
+                  <a href="">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span> Location </span>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span> Call +260 963865071 </span>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span> hello@liselijbrandinghouse.com </span>
+                  </a>
+                </div>
+              </div>
+              <div class="info_social">
+  <a href="https://web.facebook.com/liselijdesign">
+    <i class="fa fa-facebook" aria-hidden="true"></i>
+  </a>
+  <a href="https://twitter.com/liselijdesign">
+    <i class="fa fa-twitter" aria-hidden="true"></i>
+  </a>
+  <a href="www.linkedin.com/company/liseli-j-branding-house">
+    <i class="fa fa-linkedin" aria-hidden="true"></i>
+  </a>
+  <a href="https://www.instagram.com/liselijdesign/">
+    <i class="fa fa-instagram" aria-hidden="true"></i>
+  </a>
+  <a href="https://wa.me/260963865071">
+    <i class="fa fa-whatsapp" aria-hidden="true"></i>
+  </a>
+  <a href=" https://www.tiktok.com/@liselijstudio">
+    <i class="fab fa-tiktok" aria-hidden="true"></i>
+  </a>
+</div>
             </div>
           </div>
-        </footer>
-      
+        </div>
+      </section>
+
+      <!-- end info section -->
+
+      <!-- footer section -->
+      <footer class="footer_section">
+        <div class="container"></div>
+        <br />
+    <br />
+    <br />
+      </footer>
+      <!-- footer section -->
+    </div>
   
-      </div>
+     
 
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>

@@ -46,6 +46,11 @@
       .nav-item {
         margin-right: 1.5px; /* Adjust this value to reduce the spacing */
       }
+
+      .logo {
+        max-width: 100px; /* Adjust the width as needed */
+        height: auto;
+      }
     </style>
   </head>
 
@@ -67,21 +72,27 @@
               <span class=""> </span>
             </button>
 
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <!-- Icons on the far left -->
                 <li class="nav-item">
-                  <a href="https://web.facebook.com/liselijdesign/" class="nav-link">
+                  <a
+                    href="https://web.facebook.com/liselijdesign/"
+                    class="nav-link"
+                  >
                     <img
-                      src="{% static 'images/fb1-100.jpg' %}"
+                      src="{% static 'images/FACEBOOKI.jpg' %}"
                       alt="Instagram"
                     />
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="https://www.instagram.com/liselijdesign/" class="nav-link">
+                  <a
+                    href="https://www.instagram.com/liselijdesign/"
+                    class="nav-link"
+                  >
                     <img
-                      src="{% static 'images/gram-100.jpg' %}"
+                      src="{% static 'images/instagrami.jpg' %}"
                       alt="Instagram"
                     />
                   </a>
@@ -89,10 +100,7 @@
 
                 <li class="nav-item">
                   <a href="https://wa.me/260963865071" class="nav-link">
-                    <img
-                      src="{% static 'images/app-100.jpg' %}"
-                      alt="Instagram"
-                    />
+                    <img src="{% static 'images/appi.jpg' %}" alt="Instagram" />
                   </a>
                 </li>
                 <!-- Normal menu items -->
@@ -105,15 +113,14 @@
                   <a class="nav-link" href="{% url 'about' %}"> About</a>
                 </li>
 
-                 <li class="nav-item">
+                <li class="nav-item">
                   <a class="nav-link" href="{% url 'work' %}"> Work</a>
                 </li>
-                
               </ul>
               <!-- Logo -->
               <a class="navbar-brand mx-auto" href="{% url 'home' %}">
-    <img src="{% static 'images/LOGO6.png' %}" alt="Logo" />
-</a>
+                <img src="{% static 'images/LOGO6.png' %}" alt="Logo" />
+              </a>
               <!-- Right-aligned items -->
               <ul class="navbar-nav ml-auto">
                 <!-- Normal menu items -->
@@ -127,23 +134,29 @@
                 </li>
                 <!-- Icons on the far right -->
                 <li class="nav-item">
-                  <a href="www.linkedin.com/company/liseli-j-branding-house" class="nav-link">
-                    <img src="{% static 'images/din.jpg.' %}" alt="Instagram" />
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://twitter.com/liselijdesign" class="nav-link">
+                  <a
+                    href="www.linkedin.com/company/liseli-j-branding-house"
+                    class="nav-link"
+                  >
                     <img
-                      src="{% static 'images/twit-100.jpg' %}"
+                      src="{% static 'images/linkedini.jpg.' %}"
                       alt="Instagram"
                     />
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="
-https://www.tiktok.com/@liselijstudio" class="nav-link">
+                  <a href="https://twitter.com/liselijdesign" class="nav-link">
+                    <img src="{% static 'images/x.jpg' %}" alt="Instagram" />
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="
+https://www.tiktok.com/@liselijstudio"
+                    class="nav-link"
+                  >
                     <img
-                      src="{% static 'images/tok.jpg' %}"
+                      src="{% static 'images/tiktoki.jpg' %}"
                       alt="Instagram"
                     />
                   </a>
@@ -210,7 +223,12 @@ https://www.tiktok.com/@liselijstudio" class="nav-link">
           <div class="row">
             <div class="col-md-6 col-lg-3">
               <div class="info_detail">
-                <h4>LJBH</h4>
+                <img
+                  class="logo"
+                  src="{% static 'images/logo3.png' %}"
+                  alt="Logo"
+                />
+                <br /><br /><br />
                 <p>CREATING TIMELESS BRANDS.</p>
               </div>
             </div>

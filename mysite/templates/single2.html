@@ -29,6 +29,11 @@
     <link href="{% static 'css/animate.min.css' %}" rel="stylesheet" />
     <link href="{% static 'css/jquery.fancybox.min.css' %}" rel="stylesheet" />
 
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
     <!-- Main CSS -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet" />
 
@@ -53,6 +58,31 @@
     <link rel="manifest" href="favicon/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
+
+    <style>
+
+      .swiper-container {
+  max-width: 100%;
+}
+
+.swiper-slide img {
+  display: block;
+  margin: 0 auto;
+  max-height: 500px;
+  width: auto;
+  max-width: 95%; /* Adjust as needed */
+} /* Make images responsive */
+  
+
+.swiper-pagination {
+  color: red; /* Change color to red */
+}
+
+.logo {
+    max-width: 100px; /* Adjust the width as needed */
+    height: auto;
+}
+    </style>
   </head>
 
   <body class="theme-orange fixed-footer fixed-footer-lg">
@@ -69,491 +99,135 @@
               data-wow-delay=".2s"
               data-wow-duration="1.25s"
             >
-              <img src="{% static 'images/diver3.jpg' %}" alt="" />
+              <img src="{% static 'images/diver1.jpg' %}" alt="" />
             </div>
             <div
               class="screen-desktop wow bounceInUp"
               data-wow-delay=".4s"
               data-wow-duration="1.25s"
             >
-              <img src="{% static 'images/diver1.jpg' %}" alt="" />
+              <img src="{% static 'images/diver3.jpg' %}" alt="" />
             </div>
+          </div> <br/><br/>
+
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="{% static 'images/diver1.jpg' %}" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="{% static 'images/diver3.jpg' %}" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="{% static 'images/diver2.jpg' %}" alt="" />
+              </div>
+              
+              <!-- Add more slides as needed -->
+            </div>
+            
           </div>
+
+          
+
           <div class="section">
             <div class="section-item text-left">
               <div class="container">
-                <div class="row">
-                  <div class="col-lg-4 col-sm-6">
-                    <h1 class="font-libre fs48 lh-sm">
-                      <strong>Illustrational Art</strong>
-                    </h1>
-                  </div>
-                  <div class="col-lg-2 d-none d-lg-block"></div>
-                  <div class="col-sm-6">
-                    <div class="row mt-4">
-                      <div class="col-6">
-                        <div
-                          class="project-info-item wow fadeInUp"
-                          data-wow-delay=".2s"
-                          data-wow-duration=".5s"
-                          data-wow-offset="50"
-                        >
-                          <div class="project-info-title">client</div>
-                          <div class="project-info-descr">
-                            California Art Gallery Museum
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div
-                          class="project-info-item wow fadeInUp"
-                          data-wow-delay=".3s"
-                          data-wow-duration=".5s"
-                          data-wow-offset="50"
-                        >
-                          <div class="project-info-title">team</div>
-                          <div class="project-info-descr">
-                            LoganCee - Designer<br />
-                            Dustin Mahone - iOS Developer
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div
-                          class="project-info-item wow fadeInUp"
-                          data-wow-delay=".4s"
-                          data-wow-duration=".5s"
-                          data-wow-offset="50"
-                        >
-                          <div class="project-info-title">services</div>
-                          <div class="project-info-descr">
-                            Branding, UI/UX Design,<br />
-                            Mobile Design
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div
-                          class="project-info-item wow fadeInUp"
-                          data-wow-delay=".5s"
-                          data-wow-duration=".5s"
-                          data-wow-offset="50"
-                        >
-                          <div class="project-info-title">date</div>
-                          <div class="project-info-descr">
-                            Feburary 25th, 2019
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <hr class="mt70 mb100" />
-
                 <div class="lead lead-lg">
-                  <strong>Bauhaus</strong> nestled right into our wheelhouse. A
-                  dynamic co-working space attracting entrepreneurs, tinkerers,
-                  and creatives in the tech hub of Ann Arbor, Michigan, they
-                  wanted a lifestyle brand—a complete ecosystem of brand visuals
-                  and assets that could be worn, posted, shared.
+                  <strong>Colour and stripes</strong> came to mind as we conceptualize the ‘Diverse Foods’ now transitioned to ‘Diverse Mix’ brand. Using the ‘D’ in Diverse, we developed the icon which incorporated stripes and different colours. The font we selected felt playful, flavourful and slightly cultural which greatly symbolized the Diverse brand. The icon we crafted is what we used as a design element for the brand. 
                 </div>
                 <div class="mt80">
-                  <h3 class="mb40 fs30 font-libre">
-                    <strong>Challenge</strong>
-                  </h3>
-                  <div class="fs18 lh-md">
-                    <p class="mb30 text-grey">
-                      Create an unconventional yet user-friendly website –
-                      innovative, with a clean and simple design that
-                      communicates brand values and showcases multi-media
-                      content. Site that spreads the message: “Islamic stories
-                      your child will love
-                    </p>
-                    <ul class="base-list">
-                      <li
-                        class="wow fadeInUp"
-                        data-wow-delay=".2s"
-                        data-wow-duration=".5s"
-                        data-wow-offset="50"
-                      >
-                        Develop easy-to-find and easy-to-navigate mobile
-                        friendly website
-                      </li>
-                      <li
-                        class="wow fadeInUp"
-                        data-wow-delay=".2s"
-                        data-wow-duration=".5s"
-                        data-wow-offset="50"
-                      >
-                        Showcase each type of content: interactive books,
-                        animated stories and picture books, audio stories.
-                        Create an experience people want to share with others
-                      </li>
-                      <li
-                        class="wow fadeInUp"
-                        data-wow-delay=".2s"
-                        data-wow-duration=".5s"
-                        data-wow-offset="50"
-                      >
-                        Persuade to download app and subscribe
-                      </li>
-                    </ul>
-                  </div>
+                  <div class="fs18 lh-md"></div>
                 </div>
               </div>
             </div>
 
-            <div class="section-item">
-              <div class="photo-item-grey">
-                <div
-                  class="inside wow fadeInLeft"
-                  data-wow-delay=".2s"
-                  data-wow-duration=".75s"
-                >
-                  <img src="{% static 'images/pic101.jpg' %}" alt="" />
-                </div>
-              </div>
-            </div>
-
-            <div class="section-item text-left">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <div class="project-info-title mb70">color pallete</div>
-                    <div class="overflow-hidden">
-                      <div class="pallete-list">
-                        <div
-                          class="pallete-item wow fadeInUp"
-                          data-wow-delay=".2s"
-                          data-wow-duration=".5s"
-                          data-wow-offset="50"
-                        >
-                          <div class="color" style="background: #e8eef0"></div>
-                          <div class="color-title">#fefefe</div>
-                        </div>
-                        <div
-                          class="pallete-item wow fadeInUp"
-                          data-wow-delay=".3s"
-                          data-wow-duration=".5s"
-                          data-wow-offset="50"
-                        >
-                          <div class="color" style="background: #524633"></div>
-                          <div class="color-title">#524633</div>
-                        </div>
-                        <div
-                          class="pallete-item wow fadeInUp"
-                          data-wow-delay=".4s"
-                          data-wow-duration=".5s"
-                          data-wow-offset="50"
-                        >
-                          <div class="color" style="background: #d7d5d2"></div>
-                          <div class="color-title">#d7d5d2</div>
-                        </div>
-                        <div
-                          class="pallete-item wow fadeInUp"
-                          data-wow-delay=".5s"
-                          data-wow-duration=".5s"
-                          data-wow-offset="50"
-                        >
-                          <div class="color" style="background: #a36732"></div>
-                          <div class="color-title">#a36732</div>
-                        </div>
-                        <div
-                          class="pallete-item wow fadeInUp"
-                          data-wow-delay=".6s"
-                          data-wow-duration=".5s"
-                          data-wow-offset="50"
-                        >
-                          <div class="color" style="background: #879f8a"></div>
-                          <div class="color-title">#879f8a</div>
-                        </div>
-                        <div
-                          class="pallete-item wow fadeInUp"
-                          data-wow-delay=".7s"
-                          data-wow-duration=".5s"
-                          data-wow-offset="50"
-                        >
-                          <div class="color" style="background: #acb9c8"></div>
-                          <div class="color-title">#acb9c8</div>
-                        </div>
-                        <div
-                          class="pallete-item wow fadeInUp"
-                          data-wow-delay=".8s"
-                          data-wow-duration=".5s"
-                          data-wow-offset="50"
-                        >
-                          <div class="color" style="background: #cc9c5c"></div>
-                          <div class="color-title">#cc9c5c</div>
-                        </div>
-                        <div
-                          class="pallete-item wow fadeInUp"
-                          data-wow-delay=".9s"
-                          data-wow-duration=".5s"
-                          data-wow-offset="50"
-                        >
-                          <div class="color" style="background: #e1c8a5"></div>
-                          <div class="color-title">#e1c8a5</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="project-info-title mb70">Typography</div>
-                    <h2 class="fs48 font-libre mb-4">
-                      <strong>Libre Baskerville</strong>
-                    </h2>
-                    <h4 class="font-m fs28"><strong>Poppin</strong></h4>
-                    <p class="text-grey-light lh-lg mt50">
-                      Lorem ipsum dolor sit amet, consectetur<br />
-                      adipiscing elit sed interdum tempus lorem nec
-                      tincidunt.<br />
-                      Nullam in sem pharetra
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="section-item">
-              <div class="container">
-                <div class="row justify-content-md-center">
-                  <div class="col-lg-8">
-                    <div class="testimonial-item-lg">
-                      <div class="testimonial-text font-libre">
-                        “The website and tools you’ve given us are killing it in
-                        lead generation, and our AdWords click-through and
-                        conversion rates are going great!”
-                      </div>
-                      <div class="testimonial-author text-grey fs18">
-                        <strong>David Giroud</strong>, CEO at Bauhaus Co.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="section-item text-left">
-              <div class="container">
-                <h3 class="font-libre fs30 mb-5">
-                  <strong>Our Approach</strong>
-                </h3>
-                <div class="fs18 text-grey">
-                  Our approach was to present the site as a visual editorial
-                  platform with quarterly features based on events and occasions
-                  the brand was focused on. Each quarterly focus would be marked
-                  by the hero and custom tags that filter content.
-                </div>
-              </div>
-
-              <div class="container-fluid-md mt100">
-                <div class="row">
-                  <div class="col-md-6 mb30">
-                    <div
-                      class="photo-item-grey photo-item-grey-parallax photo-item-1"
-                    >
-                      <div
-                        class="inside inside-left wow fadeInLeft"
-                        data-wow-delay=".4s"
-                        data-wow-duration=".5s"
-                      >
-                        <img src="{% static 'images/pic102.jpg' %}" alt="" />
-                      </div>
-                      <div
-                        class="inside inside-right wow fadeInRight"
-                        data-wow-delay=".2s"
-                        data-wow-duration=".5s"
-                        data-wow-offset="650"
-                      >
-                        <img src="{% static 'images/pic103.jpg' %}" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb30">
-                    <div
-                      class="photo-item-grey photo-item-grey-parallax photo-item-2"
-                    >
-                      <div
-                        class="inside inside-center wow fadeInRight"
-                        data-wow-delay=".6s"
-                        data-wow-duration=".5s"
-                      >
-                        <img src="{% static 'images/pic104.jpg' %}" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-12 mb30">
-                    <div class="photo-item-grey">
-                      <div
-                        class="inside wow fadeInLeft"
-                        data-wow-delay=".2s"
-                        data-wow-duration=".75s"
-                      >
-                        <img src="{% static 'images/pic105.jpg' %}" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="section-item">
-              <div class="container">
-                <div
-                  class="wow fadeInUp"
-                  data-wow-delay=".2s"
-                  data-wow-duration=".5s"
-                  data-wow-offset="50"
-                >
-                  <button class="like-btn">
-                    <i class="icon ion-heart"></i>
-                  </button>
-                  <div class="text-grey mt-3">268 Liked</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="next-project">
-            <div class="container">
-              <div class="row">
-                <div class="col-6">
-                  <a
-                    href="single-project-branding.html"
-                    class="prev-project-link"
-                  >
-                    <div class="next-title">Previous</div>
-                    <h3 class="font-libre">
-                      Boranito Skate<br />
-                      Store
-                    </h3>
-                    <div
-                      class="next-project-photo"
-                      style="
-                        background-image: url('{% static 'img/piling-project4.jpg' %}');
-                      "
-                    ></div>
-                  </a>
-                </div>
-                <div class="col-6">
-                  <a
-                    href="single-project-mobile-app.html"
-                    class="next-project-link"
-                  >
-                    <div class="next-title">Next</div>
-                    <h3 class="font-libre">
-                      Wood Bottle<br />
-                      Packaging
-                    </h3>
-                    <div
-                      class="next-project-photo"
-                      style="
-                        background-image: url('{% static 'images/pic30.jpg' %}');
-                      "
-                    ></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="swiper-pagination"></div>
 
       <div class="footer">
-        <div class="footer-flash-about home-flash-dark">
-          <div class="container">
-            Tell us more about what you want to accomplish with your
-            organisation. We help you think of possible solutions in an
-            ever-changing digital world.
-            <div class="mt-4">
-              <a href="mailto:hello@lewisstudio.co" class="underline"
-                ><strong>hello@lewisstudio.co</strong></a
-              >
-            </div>
-          </div>
-        </div>
+        
 
         <div class="home-flash-dark pt-0 pb-0">
           <div class="container"><hr class="mt-0 mb-0" /></div>
         </div>
 
-        <div class="footer-flash home-flash-dark">
-          <div class="container">
-            <div class="footer-content-flash">
-              <div class="row">
-                <div class="col-md-4 col-6 mb-5">
-                  <h5>Office</h5>
-                  <div class="contact-item">
-                    166 Main Street, Beverly Hills,<br />
-                    CA,&nbsp;90210
-                  </div>
-                  <div class="contact-item">
-                    <a href="mailto:hello@lewisstudio.co"
-                      >hello@lewisstudio.co</a
-                    >
-                  </div>
-                  <div class="contact-item">
-                    <a href="tel:+00853462188" class="phone-link"
-                      >+0085 346 2188</a
-                    >
-                  </div>
-                </div>
+         <div class="footer_container">
+      <!-- info section -->
 
-                <div class="col-md-3 col-6 mb-5">
-                  <h5>help</h5>
-                  <ul class="footer-nav">
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">Services</a></li>
-                  </ul>
-                </div>
-
-                <div class="col-md-2 col-6 mb-5">
-                  <h5>quick links</h5>
-                  <ul class="footer-nav">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Career</a></li>
-                    <li><a href="#">Blog</a></li>
-                  </ul>
-                </div>
-
-                <div class="col-md-3 col-6 mb-5">
-                  <ul class="social social-rounded">
-                    <li>
-                      <a href="#"><i class="socicon-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="socicon-facebook"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="socicon-googleplus"></i></a>
-                    </li>
-                  </ul>
+      <section class="info_section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-3">
+            <div class="info_detail">
+    <img  class="logo" src="{% static 'images/logo3.png' %}" alt="Logo"> <br/><br/><br/>
+                <p>
+                 CREATING TIMELESS BRANDS.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-2 mx-auto">
+              <div class="info_link_box">
+                <h4>Links</h4>
+                <div class="info_links">
+                  <a class="" href="{% url 'home' %}"> Home </a>
+                  <a class="" href="{% url 'about' %}"> About </a>
+                  <a class="" href="{% url 'work' %}"> Work </a>
+                  <a class="" href="{% url 'shop' %}"> Shop </a>
                 </div>
               </div>
             </div>
-
-            <div class="site-info">
-              <div class="row">
-                <div class="col-6">
-                  <div class="copyright text-left">
-                    &copy; 2019 <strong>LEWIS</strong>. All Rights Reserved.
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="text-right">
-                    Design by <strong><a href="#">Logan Cee</a></strong>
-                  </div>
+           
+            <div class="col-md-6 col-lg-3 mb-0 ml-auto">
+              <div class="info_contact">
+                <h4>Address</h4>
+                <div class="contact_link_box">
+                  <a href="">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span> Location </span>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span> Call +260 963865071 </span>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span> hello@liselijbrandinghouse.com </span>
+                  </a>
                 </div>
               </div>
+              <div class="info_social">
+  <a href="https://web.facebook.com/liselijdesign">
+    <i class="fa fa-facebook" aria-hidden="true"></i>
+  </a>
+  <a href="https://twitter.com/liselijdesign">
+    <i class="fa fa-twitter" aria-hidden="true"></i>
+  </a>
+  <a href="www.linkedin.com/company/liseli-j-branding-house">
+    <i class="fa fa-linkedin" aria-hidden="true"></i>
+  </a>
+  <a href="https://www.instagram.com/liselijdesign/">
+    <i class="fa fa-instagram" aria-hidden="true"></i>
+  </a>
+  <a href="https://wa.me/260963865071">
+    <i class="fa fa-whatsapp" aria-hidden="true"></i>
+  </a>
+  <a href=" https://www.tiktok.com/@liselijstudio">
+    <i class="fab fa-tiktok" aria-hidden="true"></i>
+  </a>
+</div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- end info section -->
+
+      <!-- footer section -->
+      <footer class="footer_section">
+        <div class="container"></div>
+        <br />
+    <br />
+    <br />
+      </footer>
     </div>
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -576,6 +250,7 @@
     <script src="{% static 'js/jquery.viewport.js' %}"></script>
     <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
     <script src="{% static 'js/script.j' %}s"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
       $(document).ready(function () {
@@ -614,6 +289,23 @@
             ease: Linear.easeNone,
           })
           .addTo(controller);
+      });
+
+      var swiper = new Swiper(".swiper-container", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 5000, // Auto-scroll delay in milliseconds (5 seconds in this example)
+        },
       });
     </script>
   </body>
