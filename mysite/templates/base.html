@@ -1,0 +1,599 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Lj</title>
+
+    <!-- bootstrap core css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/bootstrap.css' %}"
+    />
+    <link href="{% static 'css/animsition.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'css/owl.theme.default.min.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'css/socicon.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/ionicons.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/jquery.fancybox.min.css' %}" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/bootstrap.min.css' %}"
+    />
+
+    <!-- font awesome style -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+    />
+
+    <style>
+      .butler-font {
+        font-family: "Butler", sans-serif;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .detail-box {
+        text-align: center;
+        margin: 0 auto; /* Center the detail-box horizontally */
+      }
+
+      .slider_section .detail-box {
+        text-align: center;
+        margin: 0 auto; /* Center the detail-box horizontally */
+      }
+
+      .carousel-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Adjust the height as needed */
+      }
+
+      .detail-box {
+        max-width: 600px; /* Set a maximum width for the content */
+        margin: 0 auto; /* Center the detail-box horizontally */
+        text-align: center;
+      }
+
+      .btn-box {
+        margin-top: 20px; /* Add some space between the paragraph and the button */
+      }
+
+      .font-weight-bold {
+        font-weight: bold;
+      }
+
+      .slider_section {
+        margin-bottom: 5rem; /* Adjust the value as needed */
+      }
+
+      .fade-in {
+        animation: fadeIn ease 10s;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp 1s forwards;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-up.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .img-box {
+        transform: scale(1); /* Set initial scale to 1 (normal size) */
+        transition: transform 10.5s; /* Add a smooth transition for scale */
+      }
+
+      @keyframes wowZoom {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(5.1);
+        }
+      }
+
+      .wow-zoom img {
+        animation: wowZoom 10.5s;
+      }
+
+      .animate__zoomIn {
+        animation-duration: 7s;
+        animation-fill-mode: both;
+      }
+
+      .custom_nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar-nav .nav-link {
+        font-weight: bold;
+      }
+
+      .navbar-brand {
+        margin: 0;
+      }
+
+      .navbar-nav {
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar-nav .nav-item {
+        margin-right: 1px;
+      }
+
+      .navbar-nav.ml-auto .nav-item:last-child {
+        margin-right: 0;
+      }
+
+      .nav-link img {
+        margin-bottom: 0;
+        max-width: 30px;
+      }
+
+      .nav-item {
+        margin-right: 1.5px; /* Adjust this value to reduce the spacing */
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: #0c0c0c;
+        background-color: #efe4d9;
+        overflow-x: hidden;
+      }
+
+      .logo {
+        max-width: 100px; /* Adjust the width as needed */
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section fade-in-up">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <!-- Icons on the far left -->
+                <li class="nav-item">
+                  <a
+                    href="https://web.facebook.com/liselijdesign/"
+                    class="nav-link"
+                  >
+                    <img
+                      src="{% static 'images/FACEBOOKI.jpg' %}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="https://www.instagram.com/liselijdesign/"
+                    class="nav-link"
+                  >
+                    <img
+                      src="{% static 'images/instagrami.jpg' %}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="https://wa.me/260963865071" class="nav-link">
+                    <img src="{% static 'images/appi.jpg' %}" alt="Instagram" />
+                  </a>
+                </li>
+                <!-- Normal menu items -->
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'about' %}"
+                    >About <span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'about' %}"> About</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'work' %}"> Work</a>
+                </li>
+              </ul>
+              <!-- Logo -->
+              <a class="navbar-brand mx-auto" href="{% url 'home' %}">
+                <img src="{% static 'images/LOGO6.png' %}" alt="Logo" />
+              </a>
+              <!-- Right-aligned items -->
+              <ul class="navbar-nav ml-auto">
+                <!-- Normal menu items -->
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'shop' %}">Shop</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+                <!-- Icons on the far right -->
+                <li class="nav-item">
+                  <a
+                    href="www.linkedin.com/company/liseli-j-branding-house"
+                    class="nav-link"
+                  >
+                    <img
+                      src="{% static 'images/linkedini.jpg.' %}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://twitter.com/liselijdesign" class="nav-link">
+                    <img src="{% static 'images/x.jpg' %}" alt="Instagram" />
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="
+https://www.tiktok.com/@liselijstudio"
+                    class="nav-link"
+                  >
+                    <img
+                      src="{% static 'images/tiktoki.jpg' %}"
+                      alt="Instagram"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      {% block content %} 
+      
+      
+      
+      
+      
+      
+      
+      
+      {% endblock %}
+
+      <br/><br/><br/>
+
+      <div class="footer_container">
+        <!-- info section -->
+
+        <section class="info_section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-lg-3">
+                <div class="info_detail">
+                  <img
+                    class="logo"
+                    src="{% static 'images/logo3.png' %}"
+                    alt="Logo"
+                  />
+                  <br /><br /><br />
+                  <p>CREATING TIMELESS BRANDS.</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-2 mx-auto">
+                <div class="info_link_box">
+                  <h4>Links</h4>
+                  <div class="info_links">
+                    <a class="" href="{% url 'home' %}"> Home </a>
+                    <a class="" href="{% url 'about' %}"> About </a>
+                    <a class="" href="{% url 'work' %}"> Work </a>
+                    <a class="" href="{% url 'shop' %}"> Shop </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3 mb-0 ml-auto">
+                <div class="info_contact">
+                  <h4>Address</h4>
+                  <div class="contact_link_box">
+                    <a href="">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                      <span> Location </span>
+                    </a>
+                    <a href="">
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                      <span> Call +260 963865071 </span>
+                    </a>
+                    <a href="">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                      <span> hello@liselijbrandinghouse.com </span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="info_social">
+                  <a
+                    href="https://web.facebook.com/liselijdesign/"
+                    class="nav-link"
+                  >
+                    <img src="{% static 'images/fbi.jpg' %}" alt="Instagram" />
+                  </a>
+
+                  <a
+                    href="https://web.facebook.com/liselijdesign/"
+                    class="nav-link"
+                  >
+                    <img src="{% static 'images/fbi.jpg' %}" alt="Instagram" />
+                  </a>
+
+                  <a
+                    href="https://web.facebook.com/liselijdesign/"
+                    class="nav-link"
+                  >
+                    <img src="{% static 'images/fbi.jpg' %}" alt="Instagram" />
+                  </a>
+
+                  <a
+                    href="https://web.facebook.com/liselijdesign/"
+                    class="nav-link"
+                  >
+                    <img src="{% static 'images/fbi.jpg' %}" alt="Instagram" />
+                  </a>
+
+                  <a
+                    href="https://web.facebook.com/liselijdesign/"
+                    class="nav-link"
+                  >
+                    <img src="{% static 'images/fbi.jpg' %}" alt="Instagram" />
+                  </a>
+                  <a
+                    href="https://web.facebook.com/liselijdesign/"
+                    class="nav-link"
+                  >
+                    <img src="{% static 'images/fbi.jpg' %}" alt="Instagram" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- end info section -->
+
+     
+        <!-- footer section -->
+      </div>
+
+     
+      <!-- end info section -->
+
+      <!-- footer section -->
+
+      <!-- footer section -->
+   
+
+    <!-- jQery -->
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <!-- popper js -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      window.jQuery ||
+        document.write('<script src="js/jquery.min.js"><\/script>');
+    </script>
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/animsition.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/jquery.pagepiling.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/TweenMax.min.js' %}"></script>
+    <script src="{% static 'js/ScrollMagic.min.js' %}"></script>
+    <script src="{% static 'js/animation.gsap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.viewport.js' %}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <script src="{% static 'js/jquery.js'%}"></script>
+
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+    <!-- End Google Map -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var aboutSection = document.querySelector(".about_section");
+
+        function scrollHandler() {
+          var rect = aboutSection.getBoundingClientRect();
+          var distanceFromTop = 500; // Adjust this value to change when the animation triggers
+          var windowHeight =
+            window.innerHeight || document.documentElement.clientHeight;
+
+          if (rect.top <= windowHeight - distanceFromTop) {
+            aboutSection.classList.add("fade-in-up");
+            window.removeEventListener("scroll", scrollHandler);
+          }
+        }
+
+        window.addEventListener("scroll", scrollHandler);
+        scrollHandler(); // Call scrollHandler initially to check if the section is already in view
+      });
+
+      new WOW().init();
+
+      $(document).ready(function () {
+        $("#testimonialCarousel").carousel({
+          interval: 5000, // Change the interval as needed (in milliseconds)
+        });
+      });
+
+      $(document).ready(function () {
+        // init controller
+        var controller = new ScrollMagic.Controller();
+
+        // build scenes
+        new ScrollMagic.Scene({
+          triggerElement: ".promo-3d",
+          triggerHook: 0,
+          duration: "50%",
+        })
+          .setTween(".promo-screen-titles", {
+            top: "7rem",
+            ease: Linear.easeNone,
+          })
+          .addTo(controller);
+
+        new ScrollMagic.Scene({
+          triggerElement: ".promo-3d",
+          triggerHook: 0,
+          duration: "90%",
+        })
+          .setTween(".promo-3d-bg", {
+            bottom: "-10vmin",
+            scale: 1.6,
+            ease: Linear.easeNone,
+          })
+          .addTo(controller);
+
+        new ScrollMagic.Scene({
+          triggerElement: ".promo-3d",
+          triggerHook: "0",
+          duration: "80%",
+        })
+          .setTween(".promo-3d-man", {
+            bottom: "-30vmin",
+            scale: 0.65,
+            ease: Linear.easeNone,
+          })
+          .addTo(controller);
+
+        new ScrollMagic.Scene({
+          triggerElement: ".promo-3d-opacity",
+          triggerHook: "0",
+          duration: "20%",
+        })
+          .setTween(".promo-3d-man, .promo-3d-bg", {
+            opacity: "0",
+            ease: Linear.easeNone,
+          })
+          .addTo(controller);
+
+        new ScrollMagic.Scene({
+          triggerElement: ".section-about-3d",
+          triggerHook: "0",
+          duration: "10%",
+        })
+          .setTween(".promo-3d-man, .promo-3d-bg", {
+            visibility: "hidden",
+            ease: Linear.easeNone,
+          })
+          .addTo(controller);
+
+        new ScrollMagic.Scene({
+          triggerElement: ".section-about-3d",
+          triggerHook: "0",
+        })
+          .setClassToggle(".section-about-3d", "active")
+          .addTo(controller);
+        new WOW().init();
+      });
+    </script>
+  </body>
+</html>

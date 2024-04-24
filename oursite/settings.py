@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mysite',
     'authentication',
+    'store',
     
 ]
 
@@ -71,6 +72,11 @@ TEMPLATES = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'authentication.backends.EmailBackend',  # Add your custom backend here
+]
+
 WSGI_APPLICATION = 'oursite.wsgi.application'
 
 
@@ -84,6 +90,7 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'authentication.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -134,3 +141,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mukelabailucasmaboshe@gmail.com'  # Your Gmail address
+EMAIL_HOST_PASSWORD = '2@Muke??'  # Your Gmail password or an app password if you have 2-step verification enabled
+DEFAULT_FROM_EMAIL = 'mukelabailucasmaboshe@gmail.com'  # Your Gmail address
+
+import logging
+logger = logging.getLogger('django.mail.backends.smtp')
+logger.setLevel(logging.DEBUG)
+logger.addHandler(logging.StreamHandler())

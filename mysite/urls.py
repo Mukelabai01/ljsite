@@ -13,7 +13,7 @@ urlpatterns = [
     path('shop/', shop, name='shop'), 
     path('work/', work, name='work'), 
     path('product/<int:product_id>/', product, name='product'),
-    path('add_to_cart/', add_to_cart, name='add_to_cart'),
+    
    path('checkout/<int:product_id>/', views.checkout, name='checkout'),
    
     path('single/', single, name='single'),
@@ -29,6 +29,10 @@ urlpatterns = [
     path('single10/', single10, name='single10'),
     path('single11/', single11, name='single11'),
     path('contact/', contact, name='contact'), 
+    path('product1/', product_view, name='product_view'), 
+    path('store/', store, name='store'), 
+    path('single/', single, name='single'), 
+    path('cart/', cart, name='cart'),
     
     
     ]

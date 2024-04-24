@@ -21,52 +21,68 @@ def about(request):
 def single(request):
     return render(request, 'single.html')
 
-def product(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
+def product(request, pk):
     if request.method == 'POST':
-        size = request.POST['size']
+        product = Product.objects.get(id=pk)
         quantity = int(request.POST['quantity'])
-        shipping = request.POST.get('shipping', False)
-        total_price = float(request.POST['total_price'])
-        # Save the product info in the session
-        request.session['product_id'] = product_id
-        request.session['size'] = size
-        request.session['quantity'] = quantity
-        request.session['shipping'] = shipping
-        request.session['total_price'] = total_price
-        # Redirect to the checkout page
-        return redirect(reverse('checkout', kwargs={'product_id': product_id}))
-    return render(request, 'product.html', {'product': product})
 
+        try:
+            customer = request.user.customer
+        except:
+            device = request.COOKIES['device']
+            customer, created = Customer.objects.get_or_create(device=device)
 
-def add_to_cart(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
-    request.session['product_id'] = product.id
-    request.session['size'] = request.POST.get('size')
-    request.session['quantity'] = request.POST.get('quantity')
-    request.session['shipping'] = request.POST.get('shipping')
-    request.session['total_price'] = request.POST.get('total_price')
-    return redirect('checkout')
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
 
+        # Update the quantity of the existing order item or create a new one
+        orderItem.quantity = quantity
+        orderItem.save()
 
+        return redirect('cart')
 
-def calculate_total_price(product, size, quantity, shipping):
-    # Define the base price per item based on size
-    if size == 'A5':
-        base_price = 20
-    elif size == 'A4':
-        base_price = 40
-    elif size == 'A3':
-        base_price = 60
-    elif size == 'A2':
-        base_price = 80
     else:
-        # Handle invalid size
-        return None
+        product = Product.objects.get(id=pk)
+        context = {'product': product}
+        return render(request, 'singleproduct.html', context)
 
-    # Calculate the total price including quantity and shipping
-    total_price = (base_price * quantity) + (50 if shipping == 'europe' else 20 if shipping == 'africa' else 0)
-    return total_price
+def updateItem(request):
+    data = json.loads(request.body)
+    productId = data['productId']
+    action = data['action']
+    print('Action:', action)
+    print('Product:', productId)
+
+    customer = request.user.customer
+    product = Product.objects.get(id=productId)
+    order, created = Order.objects.get_or_create(customer=customer, complete=False)
+
+    orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
+
+    if action == 'add':
+        orderItem.quantity = (orderItem.quantity + 1)
+    elif action == 'remove':
+        orderItem.quantity = (orderItem.quantity - 1)
+
+    orderItem.save()
+
+    if orderItem.quantity <= 0:
+        orderItem.delete()
+
+    return JsonResponse('Item was added', safe=False)
+
+def cart(request):
+    try:
+        customer = request.user.customer
+    except:
+        device = request.COOKIES['device']
+        customer, created = Customer.objects.get_or_create(device=device)
+
+    order, created = Order.objects.get_or_create(customer=customer, complete=False)
+    order_items = order.orderitem_set.all()  # Retrieve all order items (products) associated with the order
+
+    context = {'order': order, 'order_items': order_items}
+    return render(request, 'cart.html', context)
 
     
 def contact(request):
@@ -153,3 +169,53 @@ def checkout(request, product_id):
 
         # Use the product_id to fetch product details or process the checkout
         return HttpResponse(f"Checkout for product with ID {product_id}")
+
+
+
+def store(request):
+	products = Product.objects.all()
+	context = {'products':products}
+	return render(request, 'store.html', context)
+
+def product_view(request, pk):
+    if request.method == 'POST':
+        product = Product.objects.get(id=pk)
+        quantity = int(request.POST['quantity'])
+
+        try:
+            customer = request.user.customer
+        except:
+            device = request.COOKIES['device']
+            customer, created = Customer.objects.get_or_create(device=device)
+
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
+
+        # Update the quantity of the existing order item or create a new one
+        orderItem.quantity = quantity
+        orderItem.save()
+
+        return redirect('cart')
+
+    else:
+        product = Product.objects.get(id=pk)
+        context = {'product': product}
+        return render(request, 'singleproduct.html', context)
+
+
+
+def cart(request):
+    try:
+        customer = request.user.customer
+    except:
+        device = request.COOKIES['device']
+        customer, created = Customer.objects.get_or_create(device=device)
+
+    order, created = Order.objects.get_or_create(customer=customer, complete=False)
+    order_items = order.orderitem_set.all()  # Retrieve all order items (products) associated with the order
+
+    context = {'order': order, 'order_items': order_items}
+    return render(request, 'cart.html', context)
+
+
+
